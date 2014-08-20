@@ -3,7 +3,7 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Alumnos',
+	'Alumnito',
 );
 
 $this->menu=array(
@@ -13,6 +13,8 @@ $this->menu=array(
 ?>
 
 <h1>Alumnos</h1>
+<?php echo CHtml::link('Pincha mi alerta', '#',array('onclick'=>'alert("hola mundo")')); ?>
+
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
