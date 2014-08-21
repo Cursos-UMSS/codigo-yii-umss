@@ -42,7 +42,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'alumno-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$dataProvider,
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
@@ -52,7 +52,21 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'telefono',
 		'email',
 		array(
+			'name'=>'id',
+			'header'=>'jose',
+			'value'=>'$data->nombre',
+			),
+		 array(
+                        'name'=>'id',
+                        'header'=>'prueba ',
+                        'type'=>'raw',//mostar datos html date o datetime
+                        'value'=>'$data->id',
+                        //'value'=>'strtoupper($data->nombre." ".$data->apellido)',
+                        'filter'=>CHtml::listData(Alumno::model()->findAll(),'id','apellidos','nombre'),
+                        ),
+		array(
 			'class'=>'CButtonColumn',
 		),
+
 	),
 )); ?>

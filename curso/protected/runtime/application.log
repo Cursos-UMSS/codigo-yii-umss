@@ -24,3 +24,25 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/codigo-yii-umss/curso/index.php?r=alumno/hola
 ---
+2014/08/22 00:33:05 [error] [php] Undefined variable: dataProvider (D:\Xampp\htdocs\codigo-yii-umss\curso\protected\views\alumno\admin.php:45)
+Stack trace:
+#0 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\CController.php(869): AlumnoController->renderFile()
+#1 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\CController.php(782): AlumnoController->renderPartial()
+#2 D:\Xampp\htdocs\codigo-yii-umss\curso\protected\controllers\AlumnoController.php(143): AlumnoController->render()
+#3 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\actions\CInlineAction.php(49): AlumnoController->actionAdmin()
+#4 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\filters\CFilterChain.php(133): AlumnoController->runAction()
+#6 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\filters\CInlineFilter.php(58): AlumnoController->filterAccessControl()
+#9 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\CController.php(265): AlumnoController->runActionWithFilters()
+#12 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\CWebApplication.php(282): AlumnoController->run()
+#13 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\Xampp\htdocs\codigo-yii-umss\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Xampp\htdocs\codigo-yii-umss\curso\index.php(13): CWebApplication->run()
+REQUEST_URI=/codigo-yii-umss/curso/index.php?r=alumno/admin
+in D:\Xampp\htdocs\codigo-yii-umss\curso\protected\views\alumno\admin.php (45)
+in D:\Xampp\htdocs\codigo-yii-umss\curso\protected\controllers\AlumnoController.php (143)
+in D:\Xampp\htdocs\codigo-yii-umss\curso\index.php (13)

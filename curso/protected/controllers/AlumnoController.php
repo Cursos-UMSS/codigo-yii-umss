@@ -133,13 +133,14 @@ class AlumnoController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$dataProvider=new CActiveDataProvider('Alumno');
 		$model=new Alumno('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Alumno']))
 			$model->attributes=$_GET['Alumno'];
 
 		$this->render('admin',array(
-			'model'=>$model,
+			'model'=>$model,'dataProvider'=>$dataProvider,
 		));
 	}
 
