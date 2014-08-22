@@ -29,7 +29,7 @@ class Alumno extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, apellidos, ci, telefono, email', 'required'),
+			array('nombre, apellidos', 'required'),
 			array('ci, telefono', 'numerical', 'integerOnly'=>true),
 			array('nombre, apellidos, email', 'length', 'max'=>255),
 			// The following rule is used by search().
@@ -55,12 +55,12 @@ class Alumno extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'nombre' => 'Nombre',
-			'apellidos' => 'Apellidos',
-			'ci' => 'Ci',
+			'id' => 'Identificador',
+			'nombre' => 'Nombre de alumno',
+			'apellidos' => 'Apellido de alumno',
+			'ci' => 'Carnet de identidad',
 			'telefono' => 'Telefono',
-			'email' => 'Email',
+			'email' => 'Correo electronico',
 		);
 	}
 
@@ -85,7 +85,7 @@ class Alumno extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('apellidos',$this->apellidos,true);
-		$criteria->compare('ci',$this->ci);
+		$criteria->compare('ci',$this->ci,true);
 		$criteria->compare('telefono',$this->telefono);
 		$criteria->compare('email',$this->email,true);
 

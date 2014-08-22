@@ -31,6 +31,14 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
 	}
+	public function actionLista() {
+   $alumnos=Alumno::model()->findAll();
+   $nombre_alumno= $alumnos[0]->nombre;
+    $apellido_alumno= $alumnos[0]->apellidos;
+   $this->render('lista',array(
+       'alumnos'=>$alumnos,
+    ));
+ }
 
 	/**
 	 * This is the action to handle external exceptions.

@@ -69,7 +69,11 @@ class AlumnoController extends Controller
 
 		if(isset($_POST['Alumno']))
 		{
+
 			$model->attributes=$_POST['Alumno'];
+			$model->nombre=strtoupper($model->nombre);
+			$model->apellidos=strtoupper($model->apellidos);
+
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -93,6 +97,7 @@ class AlumnoController extends Controller
 
 		if(isset($_POST['Alumno']))
 		{
+			$model->nombre=strtoupper($model->nombre);
 			$model->attributes=$_POST['Alumno'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));

@@ -33,13 +33,51 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ci'); ?>
-		<?php echo $form->textField($model,'ci'); ?>
+		<?php echo $form->dropDownList(
+    $model,
+    'ci',
+    CHtml::listData(Alumno::model()->findAll(), 'ci', 'apellidos'),
+    array(
+                'class'=>'span4 chosen',
+                'maxlength'=>20,
+                'options' => array('AT'=>array('selected'=>true)),
+    )
+);
+ ?>
+		<?php //echo $form->textField($model,'ci'); ?>
 		<?php echo $form->error($model,'ci'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'telefono'); ?>
-		<?php echo $form->textField($model,'telefono'); ?>
+
+		<?php //echo $form->textField($model,'telefono'); ?>
+
+
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+   'model'=>$model,
+   'attribute'=>'telefono',
+   'value'=>$model->telefono,
+   'language' => 'es',
+   'htmlOptions' => array('readonly'=>"readonly"),
+   'options'=>array(
+    'autoSize'=>true,
+    'defaultDate'=>$model->telefono,
+    'dateFormat'=>'yy-mm-dd',
+    'buttonImage'=>Yii::app()->baseUrl.'/images/calendario.png',
+    'buttonImageOnly'=>true,
+    'buttonText'=>'Fecha',
+    'selectOtherMonths'=>true,
+    'showAnim'=>'slide',
+    'showButtonPanel'=>true,
+    'showOn'=>'button', 
+    'showOtherMonths'=>true, 
+    'changeMonth' => 'true', 
+    'changeYear' => 'true', 
+    'minDate'=>'date("Y-m-d")', 
+    'maxDate'=> "+20Y",
+    ),
+  )); ?>
 		<?php echo $form->error($model,'telefono'); ?>
 	</div>
 
